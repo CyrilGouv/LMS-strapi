@@ -17,6 +17,15 @@ module.exports = createCoreController('api::classroom.classroom', ({ strapi }) =
         const sanitizedResults = await sanitize.contentAPI.output(results, model)
         
         return this.transformResponse(sanitizedResults)
-    }
+    },
+
+
+    async find(ctx) {
+        // Calling default core action
+        const { data, meta } = await super.find(ctx)
+        meta.totalTutorials = data.length + 100
+
+        return { data, meta }
+    },
 
 }));
