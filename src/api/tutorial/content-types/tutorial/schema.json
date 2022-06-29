@@ -36,6 +36,10 @@
     "contents": {
       "type": "text"
     },
+    "summary": {
+      "type": "text",
+      "maxLength": 200
+    },
     "classroom": {
       "type": "relation",
       "relation": "manyToOne",
